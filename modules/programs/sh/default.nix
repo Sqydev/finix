@@ -35,20 +35,19 @@ in
         type = lib.types.nullOr lib.types.str;
         default = null;
         example = lib.literalExpression ''
-          fish/config.fish
-          bashrc
-          zshrc
+          shell/config.sh
+		  scaryShell.conf
         '';
 
         description = ''
-          Path to the shell configuration file relative to /etc.
+          Path to the shell optional configuration file relative to /etc.
         '';
       };
       text = lib.mkOption {
         type = lib.types.lines;
         default = "";
         description = ''
-          Configuration of the shell.
+          Optional configuration of the shell.
         '';
       };
     };
