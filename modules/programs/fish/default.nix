@@ -10,13 +10,13 @@ let
   fishAbbrs = lib.concatStringsSep "\n" (
     lib.mapAttrsToList
       (name: value: "abbr -a ${name} -- ${lib.escapeShellArg value}")
-      cfg.shellAbbrs
+      cfg.config.shellAbbrs
   );
 
   fishAliases = lib.concatStringsSep "\n" (
     lib.mapAttrsToList
       (name: value: "alias ${name} ${lib.escapeShellArg value}")
-      (lib.filterAttrs (_: value: value != null) cfg.shellAliases)
+      (lib.filterAttrs (_: value: value != null) cfg.config.shellAliases)
   );
 in
 {
