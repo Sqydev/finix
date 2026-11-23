@@ -10,7 +10,7 @@ in
   options.finit.tmpfiles = {
     rules = lib.mkOption {
       type = with lib.types; listOf str;
-      default = [ ];
+      default = [ "d /tmp 1777 root root -" ];
       example = [ "d /tmp 1777 root root 10d" ];
       description = ''
         Rules for creation, deletion and cleaning of volatile and temporary files
